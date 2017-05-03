@@ -22,7 +22,7 @@ gem 'cloudinary', '~> 1.7'
 gem 'mail_form', '~> 1.6'
 
 
-group :development, :test do
+group :development do
   gem 'sqlite3'
 end
 
