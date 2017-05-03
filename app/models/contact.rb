@@ -6,7 +6,7 @@ class Contact < MailForm::Base
 
   def headers
     {
-        :subject => "Rails 5 Starter Project - Contact Form",
+        :subject => "StockPic - Contact Form",
         :to => "dev@priom.me",
         :from => %("#{name}" <#{email}>)
     }
