@@ -6765,3 +6765,190 @@ Content-Transfer-Encoding: 7bit
 Completed 200 OK in 445ms (Views: 144.1ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/" for ::1 at 2017-05-03 03:27:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/CodeR/Dropbox/RubyOnRails/projects/stockpic/app/controllers/application_controller.rb:4)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 833ms (Views: 802.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-03 03:27:57 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 187ms (Views: 183.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-03 03:28:00 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (355.0ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 598ms (Views: 555.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-03 03:30:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/CodeR/Dropbox/RubyOnRails/projects/stockpic/app/controllers/application_controller.rb:4)
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (248.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 820ms (Views: 779.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-03 03:31:54 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ShflrsibJnAjUNMzXOOpoTRMMo7Qg83ByC98Bgz8fQobg3crAzw5nnUMSeYgwv6WVCapLavKf6sKErbRCqaiZA==", "user"=>{"email"=>"c0der0@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9ff0c17590 @tempfile=#<Tempfile:/var/folders/_6/skcf3rqj0nx7cdm0qnq25rd00000gn/T/RackMultipart20170503-29622-1yotcw7.jpg>, @original_filename="stockpic.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"stockpic.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>""}, "payment"=>{"card_number"=>"4242424242424242", "card_cvv"=>"222", "card_expires_month"=>"10", "card_expires_year"=>"2019"}}
+Unpermitted parameters: avatar, avatar_cache
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "c0der0@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "c0der0@yahoo.com"], ["encrypted_password", "$2a$11$LLqY9DU6VlWv9TEg9mkjxOVaOHgUNU/uTW.at9LNPZZizro0ebUAG"], ["created_at", 2017-05-03 07:31:54 UTC], ["updated_at", 2017-05-03 07:31:54 UTC], ["confirmation_token", "sPxVV4Y85GxZ_39-7xAB"], ["confirmation_sent_at", 2017-05-03 07:31:54 UTC]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 259.8ms
+Sent mail to c0der0@yahoo.com (13.7ms)
+Date: Wed, 03 May 2017 03:31:55 -0400
+From: do-not-reply@rails5starter.com
+Reply-To: do-not-reply@rails5starter.com
+To: c0der0@yahoo.com
+Message-ID: <5909876b4b043_73b63fcff9de985c846d1@DeathRazer.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome c0der0@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=sPxVV4Y85GxZ_39-7xAB&amp;locale=en">Confirm my account</a></p>
+
+Completed 200 OK in 909ms (Views: 181.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-03 03:37:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/CodeR/Dropbox/RubyOnRails/projects/stockpic/app/controllers/application_controller.rb:4)
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (251.7ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 908ms (Views: 843.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-03 03:37:29 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 91ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-03 03:37:31 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (42.5ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 205ms (Views: 204.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-03 03:38:27 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UiLf9AUKjT9pYKalHD8CJ3yuvqF6zamXMzLoZcOJxGoDtk1xzq2S0T88PHBgHlUQHMQlAgGEG/3xDyKyxdMbBA==", "user"=>{"email"=>"c0der0@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar_cache"=>""}, "payment"=>{"card_number"=>"4012888888881881", "card_cvv"=>"123", "card_expires_month"=>"1", "card_expires_year"=>"2020"}, "commit"=>"Sign up"}
+Unpermitted parameter: avatar_cache
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "c0der0@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "c0der0@yahoo.com"], ["encrypted_password", "$2a$11$GSTOCvHp7ev/7HUrbLKqo.hok2PyfUElUIevsBxeKgWH5ILFa1EeS"], ["created_at", 2017-05-03 07:38:27 UTC], ["updated_at", 2017-05-03 07:38:27 UTC], ["confirmation_token", "SBmw7vL96Rsx49Z95La9"], ["confirmation_sent_at", 2017-05-03 07:38:27 UTC]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.6ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 379.1ms
+Sent mail to c0der0@yahoo.com (14.6ms)
+Date: Wed, 03 May 2017 03:38:28 -0400
+From: do-not-reply@rails5starter.com
+Reply-To: do-not-reply@rails5starter.com
+To: c0der0@yahoo.com
+Message-ID: <590988f49b5ec_744b3fe5391e778459774@DeathRazer.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome c0der0@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=SBmw7vL96Rsx49Z95La9&amp;locale=en">Confirm my account</a></p>
+
+Completed 200 OK in 948ms (Views: 155.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/confirmation?confirmation_token=SBmw7vL96Rsx49Z95La9&amp;locale=en" for ::1 at 2017-05-03 03:42:03 -0400
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"SBmw7vL96Rsx49Z95La9", "amp"=>nil, "locale"=>"en"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "SBmw7vL96Rsx49Z95La9"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "2884a8558aa63ada2d4f9044bf526fe2c5f74db975a3fa7fc120c85e8da70de1"], ["LIMIT", 1]]
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 583ms (Views: 189.5ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/confirmation" for ::1 at 2017-05-03 03:42:12 -0400
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ulN3AD6/7oEf2SiWP7n1WNAA+2c0lmCyT1degMzvZx+GWinFgAvLbjpRtt9K9g3TwJDlwhBqsyVyML9onhMrw==", "user"=>{"email"=>"c0der0@yahoo.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."unconfirmed_email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["unconfirmed_email", "c0der0@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "c0der0@yahoo.com"], ["LIMIT", 1]]
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 298ms (Views: 255.5ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
