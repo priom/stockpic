@@ -19,6 +19,7 @@ See [demo](https://stockpic.herokuapp.com/)
 * Carrierwave
 * Cloudinary
 * Mail Form
+* Stripe
 
 **Instructions**
 1. git clone https://github.com/priom/stockpic.git
