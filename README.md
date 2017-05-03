@@ -1,10 +1,9 @@
-# Rails 5 Starter Project
+# StockPic
 
-[![Build Status](https://semaphoreci.com/api/v1/priom/rails5starter/branches/master/shields_badge.svg)](https://semaphoreci.com/priom/rails5starter)
+[![Build Status](https://semaphoreci.com/api/v1/priom/stockpic/branches/master/shields_badge.svg)](https://semaphoreci.com/priom/stockpic)
 
-The only rails 5 starter project you will ever need to start your project right away.
 
-See [demo](https://rails5starter.herokuapp.com/)
+See [demo](https://stockpic.herokuapp.com/)
 
 * Ruby version: 2.4.1
 
@@ -22,8 +21,8 @@ See [demo](https://rails5starter.herokuapp.com/)
 * Mail Form
 
 **Instructions**
-1. git clone https://github.com/priom/rails5starter.git
-2. cd rails5starter
+1. git clone https://github.com/priom/stockpic.git
+2. cd stockpic
 3. bundle
 4. rails db:migrate
 5. rails server
@@ -37,7 +36,7 @@ See [demo](https://rails5starter.herokuapp.com/)
 If you are using Rubymine then open by 'mine .' in your terminal.
 
 Open [localhost](http://localhost:3000) in your browser.
-See [live demo](https://rails5starter.herokuapp.com/)
+See [live demo](https://stockpic.herokuapp.com/)
 
 P.S. I'm using free heroku account so, it might a little while for loading it first time.
 
