@@ -20,7 +20,7 @@ gem 'devise-bootstrap-views', '~> 0.0.11'
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary', '~> 1.7'
 gem 'mail_form', '~> 1.6'
-
+gem 'stripe'
 
 group :development do
   gem 'sqlite3'
