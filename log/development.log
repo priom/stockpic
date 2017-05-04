@@ -19,3 +19,63 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 398ms (Views: 360.8ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-05-04 03:07:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/CodeR/Dropbox/RubyOnRails/projects/stockpic/app/controllers/application_controller.rb:4)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (80.0ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 899ms (Views: 871.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-05-04 03:19:17 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (316.6ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 606ms (Views: 538.0ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-05-04 03:20:20 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZGBFDjDPoufM/ANPQofSH6JOKuksgDXpnQjEkAVo6s+j7ysPCxm/2/malNked9L5+frM79ef++ZJRCBkmKKMPQ==", "user"=>{"email"=>"test@stockpic.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f8a13355760 @tempfile=#<Tempfile:/var/folders/_6/skcf3rqj0nx7cdm0qnq25rd00000gn/T/RackMultipart20170504-13437-1t3t4nd.jpg>, @original_filename="stockpic.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"stockpic.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>""}, "payment"=>{"card_number"=>"42424242424242", "card_cvv"=>"424", "card_expires_month"=>"4", "card_expires_year"=>"2024"}}
+Unpermitted parameters: avatar, avatar_cache
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@stockpic.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "test@stockpic.com"], ["encrypted_password", "$2a$11$Jn30qEFx4d4JhIYDAJwcuuQSEi86ICKo6R.hnL1sKxSyMTyoqqMdq"], ["created_at", 2017-05-04 07:20:20 UTC], ["updated_at", 2017-05-04 07:20:20 UTC], ["confirmation_token", "1DQ24w_fek2SkTqENhDu"], ["confirmation_sent_at", 2017-05-04 07:20:20 UTC]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.6ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 291.0ms
+Sent mail to test@stockpic.com (12.8ms)
+Date: Thu, 04 May 2017 03:20:21 -0400
+From: do-not-reply@stockpic.com
+Reply-To: do-not-reply@stockpic.com
+To: test@stockpic.com
+Message-ID: <590ad63510ef9_347d3fc506908bb081761@DeathRazer.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test@stockpic.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=1DQ24w_fek2SkTqENhDu&amp;locale=en">Confirm my account</a></p>
+
+Completed 200 OK in 932ms (Views: 167.5ms | ActiveRecord: 8.5ms)
+
+
